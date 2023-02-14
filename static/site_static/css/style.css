@@ -1,0 +1,120 @@
+.profile{
+    text-align: center;
+}
+.profile img{
+    width: 350px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5%;
+}
+.numorder
+{
+    color: blue;
+}
+.congratulation
+{
+    color: green;
+}
+.level
+{
+    padding: 8px;
+}
+.person_image img
+{
+    height: 250px;
+}
+.theform
+{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+.thelabel
+{
+    color: rgb(104, 47, 228);
+    font-weight: bold;
+}
+.in
+{
+    font-size: 17px;
+}
+.theerror
+{
+    color: red;
+    font-size: 15px;
+    font-style: italic;
+}
+.send
+{
+    background: white;
+    color: blue;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    border-radius: 7px;
+    width: 80px;
+}
+.send:hover
+{
+    background: blue;
+    color: white;
+}
+.theforget
+{
+    text-decoration: none;
+    font-size: 18px;
+    font-style: italic;
+    transition: all 0.2s ease-in-out;
+}
+.theforget:hover
+{
+    color: blue;
+}
+.theimagelogin{
+    max-width: 350px;
+    max-height: 350px;
+}
+.thesignupform
+{
+    margin-top: 35px;
+}
+.btnsignup
+{
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    width: 120px;
+    font-weight: bold;
+}
+.thechange
+{
+    margin: 20px auto;
+}
+.thesend
+{
+    background: white;
+    color: blue;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    border-radius: 7px;
+    width: 150px;
+    margin: 20px;
+    display: block;
+}
+.thesend:hover
+{
+    background: blue;
+    color: white;
+}
+.resetpass{
+    margin: 20px auto;
+    text-align: center;
+}
+.lab 
+{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(102, 69, 219);
+}

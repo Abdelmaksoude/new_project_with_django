@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 thesignupform">
+            <form action="" method="post" class="signupform">
+                {% csrf_token %}
+                {{form}}
+                <button class="rounded btn btn-outline-success btnsignup" type="submit">Sign up</button>
+            </form>
+        </div> 
+        <div class="col-md-6">
+            <img src="{% static 'site_static/images/signup.jpg' %}" class="theimagelogin">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

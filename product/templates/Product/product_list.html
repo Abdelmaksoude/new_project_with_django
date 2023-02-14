@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container mt-3">
+        <div class="row">
+            {% for product in product_list %}
+                <div class="col-md-3 mt-3">
+                    <div class="card">
+                        {% if product.Proimage %}
+                            <img src="{{product.Proimage.url}}" class="card-img-top" style="max-height: 200px;" alt="...">
+                        {% else %}
+                        <img src="{% static 'site_static/images/default.png' %}" class="card-img-top" style="max-height: 250px;" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{{product.get_absolute_url}}">{{product}}</a></h5>
+                            <p class="card-text">{{product.ProDesc}}</p>
+                            <div class="mt-3 mb-3">
+                                {% if product.ProDiscountPrice > 0 %}
+                                    <span class="bg-success p-1 rounded text-light">SALE</span>
+                                {% endif %}
+                                {% if product.Proisnew %}
+                                    <span class="bg-primary p-1 m-1 rounded text-light">NEW</span>
+                                {% endif %}
+                                {% if product.Proisbestsaller %}
+                                    <span class="bg-danger p-1 m-1 rounded text-light">Best Saller</span>
+                                {% endif %}
+                            </div>
+                            <a href="#" class="btn btn-primary">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if product_list.has_other_pages %}
+    <div class="container  mt-3">
+        <div class="row">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    {% if product_list.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{product_list.previous_page_number}}">Previous</a></li>
+                    {% else %}
+                        <li class="disables"></li>
+                    {% endif %}
+                    {% for pages in product_list.paginator.page_range %}
+                        {% if product_list.number == pages %}
+                            <li class="page-item"><a class="page-link" href="#">{{pages}}</a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{pages}}">{{pages}}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if product_list.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{product_list.next_page_number}}">Next</a></li>
+                    {% else %}
+                        <li class="disables"></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock content %}

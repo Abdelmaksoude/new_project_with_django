@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                {% if product_details.Proimage %}
+                    <img src="{{product_details.Proimage.url}}" class="card-img-top" alt="...">
+                {% else %}
+                    <img src="{% static 'site_static/images/default.png' %}" class="card-img-top" alt="...">
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="mt-3">
+                    {% if product_details.ProDiscountPrice > 0 %}
+                        <span class="bg-success p-1 rounded text-light">SALE</span>
+                    {% endif %}
+                    {% if product_details.Proisnew %}
+                        <span class="bg-primary p-1 m-1 rounded text-light">NEW</span>
+                    {% endif %}
+                    {% if product_details.Proisbestsaller %}
+                        <span class="bg-danger p-1 m-1 rounded text-light">Best Saller</span>
+                    {% endif %}
+                </div>
+                <h1>{{product_details.ProName}}</h1>
+                <h4>{{product_details.Procategory}}</h4>
+                <p>
+                    {% if product_details.ProDiscountPrice > 0 %}
+                        <span><del>{{product_details.ProPrice}}$</del></span>
+                        <span>{{product_details.ProDiscountPrice}}$</span>
+                    {% else %}
+                        <span>{{product_details.ProPrice}}$</span>
+                    {% endif %}
+                </p>
+                <div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Number Of The Cart</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add To Cart</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <h3 class="mt-3">Product Description</h3>
+            <p class="p-4">{{product_details.ProDesc}}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="container mt-3">
+        <h1>Leave Your Review</h1>
+        <form>
+            <div class="form-group">
+                <label for="floatingTextarea2">Leave Your Review</label>
+                <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+            <div class="mb-3 form-check level">
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">5</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add REview</button>
+        </form>
+    </div>
+    <hr>
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="person_image">
+                    <img src="{% static 'site_static/images/a2.JPG' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h3 class="p-1">User Name</h3>
+                <p class="p-2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}
